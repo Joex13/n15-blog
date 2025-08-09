@@ -17,9 +17,9 @@ export const Header = () => {
             type="button"
             className="flex flex-col justify-around w-8 h-8 bg-transparent border-none cursor-pointer p-0 focus:outline-none"
           >
-            <div className="w-8 h-1 bg-white rounded-sm transition-all duration-300 origin-left" />
-            <div className="w-8 h-1 bg-white rounded-sm transition-all duration-300 origin-left" />
-            <div className="w-8 h-1 bg-white rounded-sm transition-all duration-300 origin-left" />
+            <div className="w-8 h-0.5 bg-white rounded-sm transition-all duration-300 origin-left" />
+            <div className="w-8 h-0.5 bg-white rounded-sm transition-all duration-300 origin-left" />
+            <div className="w-8 h-0.5 bg-white rounded-sm transition-all duration-300 origin-left" />
           </button>
         </div>
       </div>
