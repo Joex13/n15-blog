@@ -28,7 +28,12 @@
 		"enabled": true,
 		"actions": {
 			"source": {
-				"organizeImports": "off"
+				"organizeImports": {
+					"level": "off",
+					"options": {
+						"groups": [{ "type": true }]
+					}
+				}
 			}
 		}
 	}
