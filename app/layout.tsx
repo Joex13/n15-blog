@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { M_PLUS_2 } from "next/font/google"
 import "@/app/globals.css"
+import { Header } from "@/components/layout/Header"
+import { Footer } from "@/components/layout/Footer"
 
 const mPlus2 = M_PLUS_2({
   variable: "--font-m-plus-2",
@@ -19,7 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${mPlus2.variable} antialiased`}>{children}</body>
+      <body className={`${mPlus2.variable} antialiased`}>
+        <Header />
+        <main className="px-2">{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }
