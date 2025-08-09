@@ -23,7 +23,9 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${mPlus2.variable} antialiased`}>
         <Header />
-        <main className="px-2">{children}</main>
+        <main className="container mx-auto flex max-w-5xl justify-between px-2">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
