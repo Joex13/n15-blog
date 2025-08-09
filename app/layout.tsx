@@ -22,10 +22,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${mPlus2.variable} antialiased flex flex-col min-h-screen max-h-screen p-2`}
+        className={`${mPlus2.variable} antialiased flex flex-col min-h-screen max-h-screen p-2 w-full mx-auto`}
       >
         <Header />
-        <main className="container mx-auto flex max-w-5xl justify-between flex-1 overflow-y-auto">
+        <main className="w-full mx-auto flex justify-between flex-1 overflow-y-auto">
           {children}
         </main>
         <Footer />
