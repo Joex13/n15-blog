@@ -38,7 +38,7 @@ export default async function Home() {
 
   return (
     <div>
-      <ul>
+      <ul className="flex flex-col gap-4">
         {data.contents.map((blog: Blog) => {
           return (
             <li key={blog.id}>
