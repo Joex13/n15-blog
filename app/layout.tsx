@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${mPlus2.variable} antialiased flex flex-col min-h-screen max-h-screen p-2 w-full mx-auto`}
+        className={`${mPlus2.variable} antialiased flex flex-col min-h-screen max-h-screen p-2 w-full max-w-[1600px] mx-auto`}
       >
         <Header />
         <main className="w-full mx-auto flex justify-between flex-1 overflow-y-auto mt-4">

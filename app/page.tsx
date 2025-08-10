@@ -1,5 +1,6 @@
 import { client } from "@/libs/client"
 import Image from "next/image"
+import Link from "next/link"
 
 export type Blog = {
   id: string
@@ -37,24 +38,27 @@ export default async function Home() {
   })
 
   return (
-    <div>
-      <ul className="flex flex-col gap-4">
-        {data.contents.map((blog: Blog) => {
-          return (
-            <li key={blog.id}>
-              {blog.eyecatch && (
+    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-auto">
+      {data.contents.map((blog: Blog) => {
+        return (
+          <li key={blog.id} className="flex flex-col gap-2 hover:opacity-30">
+            {blog.eyecatch && (
+              <Link href={`/blogs/${blog.id}`}>
                 <Image
                   src={blog.eyecatch.url}
                   alt=""
                   width={blog.eyecatch.width}
                   height={blog.eyecatch.height}
+                  className="w-full h-auto"
                 />
-              )}{" "}
+              </Link>
+            )}
+            <Link href={`/blogs/${blog.id}`} className="text-lg font-bold">
               {blog.title}
-            </li>
-          )
-        })}
-      </ul>
-    </div>
+            </Link>
+          </li>
+        )
+      })}
+    </ul>
   )
 }
