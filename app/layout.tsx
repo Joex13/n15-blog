@@ -3,6 +3,7 @@ import { M_PLUS_2 } from "next/font/google"
 import "@/app/globals.css"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
+import Background from "@/components/layout/Background"
 
 const mPlus2 = M_PLUS_2({
   variable: "--font-m-plus-2",
@@ -29,6 +30,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Background />
       </body>
     </html>
   )
