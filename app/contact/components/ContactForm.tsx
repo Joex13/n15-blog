@@ -11,21 +11,21 @@ export default function ContactForm() {
   )
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-        お問い合わせ
+    <div className="mx-auto p-6 bg-black/90 rounded-lg shadow-lg border border-gray-700">
+      <h2 className="text-3xl font-bold text-white mb-6 text-center">
+        CONTACT
       </h2>
 
       {/* 成功メッセージ */}
       {state.success && (
-        <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+        <div className="mb-6 p-4 bg-green-900 border border-green-600 text-green-200 rounded">
           {state.message}
         </div>
       )}
 
       {/* エラーメッセージ */}
       {!state.success && state.message && (
-        <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+        <div className="mb-6 p-4 bg-red-900 border border-red-600 text-red-200 rounded">
           {state.message}
         </div>
       )}
@@ -34,7 +34,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="name"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-gray-300 mb-2"
           >
             お名前 <span className="text-red-500">*</span>
           </label>
@@ -43,20 +43,20 @@ export default function ContactForm() {
             id="name"
             name="name"
             required
-            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-              state.errors.name ? "border-red-500" : "border-gray-300"
+            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors bg-black/30 text-white placeholder-gray-400 ${
+              state.errors.name ? "border-red-400" : "border-gray-500/50"
             }`}
             placeholder="山田太郎"
           />
           {state.errors.name && (
-            <p className="mt-1 text-sm text-red-600">{state.errors.name[0]}</p>
+            <p className="mt-1 text-sm text-red-400">{state.errors.name[0]}</p>
           )}
         </div>
 
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-gray-300 mb-2"
           >
             メールアドレス <span className="text-red-500">*</span>
           </label>
@@ -65,20 +65,20 @@ export default function ContactForm() {
             id="email"
             name="email"
             required
-            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-              state.errors.email ? "border-red-500" : "border-gray-300"
+            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors bg-black/30 text-white placeholder-gray-400 ${
+              state.errors.email ? "border-red-400" : "border-gray-500/50"
             }`}
             placeholder="example@email.com"
           />
           {state.errors.email && (
-            <p className="mt-1 text-sm text-red-600">{state.errors.email[0]}</p>
+            <p className="mt-1 text-sm text-red-400">{state.errors.email[0]}</p>
           )}
         </div>
 
         <div>
           <label
             htmlFor="subject"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-gray-300 mb-2"
           >
             件名 <span className="text-red-500">*</span>
           </label>
@@ -87,13 +87,13 @@ export default function ContactForm() {
             id="subject"
             name="subject"
             required
-            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-              state.errors.subject ? "border-red-500" : "border-gray-300"
+            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors bg-black/30 text-white placeholder-gray-400 ${
+              state.errors.subject ? "border-red-400" : "border-gray-500/50"
             }`}
             placeholder="お問い合わせの件名"
           />
           {state.errors.subject && (
-            <p className="mt-1 text-sm text-red-600">
+            <p className="mt-1 text-sm text-red-400">
               {state.errors.subject[0]}
             </p>
           )}
@@ -102,7 +102,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-gray-700 mb-2"
+            className="block text-sm font-medium text-gray-300 mb-2"
           >
             メッセージ <span className="text-red-500">*</span>
           </label>
@@ -110,14 +110,14 @@ export default function ContactForm() {
             id="message"
             name="message"
             required
-            rows={6}
-            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-vertical ${
-              state.errors.message ? "border-red-500" : "border-gray-300"
+            rows={10}
+            className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-vertical bg-black/30 text-white placeholder-gray-400 ${
+              state.errors.message ? "border-red-400" : "border-gray-500/50"
             }`}
             placeholder="お問い合わせの詳細をご記入ください（10文字以上）"
           />
           {state.errors.message && (
-            <p className="mt-1 text-sm text-red-600">
+            <p className="mt-1 text-sm text-red-400">
               {state.errors.message[0]}
             </p>
           )}
@@ -126,20 +126,13 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full bg-blue-600 text-white py-3 px-6 rounded-md font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="w-full bg-blue-500 text-white py-3 px-6 rounded-md font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black/20 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {isPending ? "送信中..." : "送信する"}
         </button>
       </form>
 
-      <div className="mt-8 text-center text-sm text-gray-600">
-        <p>お急ぎの場合は、以下の方法でもお気軽にお問い合わせください。</p>
-        <div className="mt-4 space-y-2">
-          <p>📧 Email: contact@example.com</p>
-          <p>📱 電話: 03-1234-5678</p>
-          <p>🕒 営業時間: 平日 9:00-18:00</p>
-        </div>
-      </div>
+      <p className="mt-8 text-center text-sm text-gray-400">返答しません。</p>
     </div>
   )
 }
