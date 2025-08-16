@@ -1,23 +1,20 @@
-import Link from "next/link"
+import NextLink from "next/link"
+import { Link } from "@/components/ui/Link"
 
 export const Header = () => {
   return (
     <header className="mx-auto flex justify-between w-full">
-      <Link href="/" className="text-2xl font-bold">
+      <NextLink href="/" className="text-2xl font-bold">
         N15
-      </Link>
+      </NextLink>
       <div className="flex items-center">
         <nav className="hidden md:block">
           <ul className="flex gap-2">
             <li>
-              <Link href="/about" className="text-xl font-bold">
-                About
-              </Link>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/contact" className="text-xl font-bold">
-                Contact
-              </Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </nav>
