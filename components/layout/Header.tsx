@@ -16,6 +16,9 @@ export const Header = () => {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
+            <li>
+              <Link href="/404">404</Link>
+            </li>
           </ul>
         </nav>
         <div className="md:hidden">
