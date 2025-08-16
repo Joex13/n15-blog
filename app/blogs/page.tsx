@@ -32,7 +32,7 @@ export type Data = {
   limit: number
 }
 
-export default async function Home() {
+export default async function page() {
   const data: Data = await client.get({
     endpoint: "blogs",
   })

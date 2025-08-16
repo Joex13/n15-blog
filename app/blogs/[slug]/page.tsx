@@ -32,7 +32,7 @@ export type Data = {
   limit: number
 }
 
-export default async function Blog({
+export default async function page({
   params,
 }: {
   params: Promise<{ slug: string }>
