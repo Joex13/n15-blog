@@ -44,7 +44,7 @@ export default async function page({
   })
 
   return (
-    <div className="w-full">
+    <article className="w-full !max-w-[inherit] prose prose-lg prose-dark mx-auto">
       <h1 className="text-3xl font-bold mb-4">{data.title}</h1>
       {data.eyecatch && (
         <Image
@@ -60,11 +60,11 @@ export default async function page({
         dangerouslySetInnerHTML={{
           __html: `${data.content}`,
         }}
-        className="prose prose-lg max-w-none"
+        className="max-w-none"
       />
-      <Link href="/" className="text-blue-500 hover:underline mt-8 block">
+      <Link href="/" className="text-blue-500 hover:underline mt-8">
         TOPページへ戻る
       </Link>
-    </div>
+    </article>
   )
 }
