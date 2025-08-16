@@ -11,7 +11,7 @@ type Props = LinkProps & {
   className?: string
 }
 
-export const Link = ({ href, children, className, ...props }: Props) => {
+export default function Link({ href, children, className, ...props }: Props) {
   const pathname = usePathname()
 
   return (

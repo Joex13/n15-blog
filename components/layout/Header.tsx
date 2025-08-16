@@ -1,7 +1,7 @@
 import NextLink from "next/link"
-import { Link } from "@/components/ui/Link"
+import Link from "@/components/ui/Link"
 
-export const Header = () => {
+export default function Header() {
   return (
     <header className="mx-auto flex justify-between w-full">
       <NextLink href="/" className="text-2xl font-bold">

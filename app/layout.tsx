@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
 import { M_PLUS_2 } from "next/font/google"
 import "@/app/globals.css"
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
+import Header from "@/components/layout/Header"
+import Footer from "@/components/layout/Footer"
 import Background from "@/components/layout/Background"
 
 const mPlus2 = M_PLUS_2({
