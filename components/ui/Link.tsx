@@ -18,7 +18,7 @@ export default function Link({ href, children, className, ...props }: Props) {
     <NextLink
       href={href}
       className={clsx(
-        "text-xl font-bold",
+        "text-xl font-bold hover:opacity-50",
         pathname === href && "text-red-500",
         className
       )}
