@@ -4,13 +4,22 @@ export const Header = () => {
   return (
     <header className="mx-auto flex justify-between w-full">
       <Link href="/" className="text-2xl font-bold">
-        Next.js15 Blog
+        N15
       </Link>
       <div className="flex items-center">
         <nav className="hidden md:block">
-          <Link href="/about" className="text-xl font-bold">
-            About
-          </Link>
+          <ul className="flex gap-2">
+            <li>
+              <Link href="/about" className="text-xl font-bold">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" className="text-xl font-bold">
+                Contact
+              </Link>
+            </li>
+          </ul>
         </nav>
         <div className="md:hidden">
           <button
