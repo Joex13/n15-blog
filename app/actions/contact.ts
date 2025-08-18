@@ -43,22 +43,17 @@ export async function submitContactForm(
 
     const validatedData = validationResult.data
 
-    // ここで実際の処理を実装
-    // 例: データベースへの保存、メール送信、Slack通知など
-
-    // デモ用のログ出力
-    console.log("お問い合わせを受信しました:", {
-      ...validatedData,
-      timestamp: new Date().toISOString(),
-    })
-
     try {
       // nodemailerで送る
-      const transporter = nodemailer.createTransport({
+      const transporter: nodemailer.Transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
+          type: "OAuth2",
           user: process.env.GMAIL_USER,
-          pass: process.env.GMAIL_PASSWORD,
+          clientId: process.env.GMAIL_CLIENT_ID,
+          clientSecret: process.env.GMAIL_CLIENT_SECRET,
+          refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+          accessToken: process.env.GMAIL_ACCESS_TOKEN,
         },
       })
 
@@ -67,7 +62,7 @@ export async function submitContactForm(
         from: validatedData.email,
         to: process.env.GMAIL_USER,
         subject: `お問い合わせ（n15-blog）: ${validatedData.subject}`,
-        text: `n15-blogより下記のお問い合わせを受け付けました。\n\n${validatedData.message}`,
+        text: `n15-blogより下記のお問い合わせを受け付けました。\nお名前：${validatedData.name}\nメールアドレス：${validatedData.email}\n\nお問い合わせ内容：\n${validatedData.message}`,
       }
 
       await transporter.sendMail(mailOptions)
