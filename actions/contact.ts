@@ -1,7 +1,7 @@
 "use server"
 
 import nodemailer from "nodemailer"
-import { contactSchema } from "@/app/types/contact"
+import { contactSchema } from "@/types/contact"
 
 export async function submitContactForm(
   _prevState: {
