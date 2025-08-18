@@ -1,5 +1,6 @@
 "use server"
 
+import nodemailer from "nodemailer"
 import { contactSchema } from "@/app/types/contact"
 
 export async function submitContactForm(
@@ -50,6 +51,30 @@ export async function submitContactForm(
       ...validatedData,
       timestamp: new Date().toISOString(),
     })
+
+    try {
+      // nodemailerで送る
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASSWORD,
+        },
+      })
+
+      await transporter.verify()
+      const mailOptions: nodemailer.SendMailOptions = {
+        from: validatedData.email,
+        to: process.env.GMAIL_USER,
+        subject: `お問い合わせ（n15-blog）: ${validatedData.subject}`,
+        text: `n15-blogより下記のお問い合わせを受け付けました。\n\n${validatedData.message}`,
+      }
+
+      await transporter.sendMail(mailOptions)
+    } catch (error) {
+      console.log("nodemailerの設定中にエラーが発生しました。", error)
+      throw new Error("nodemailerの設定中にエラーが発生しました。")
+    }
 
     // 成功レスポンス
     return {
